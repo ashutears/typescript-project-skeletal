@@ -1,0 +1,59 @@
+{
+  "name": "customerportal",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "start": "tsc && node build/index.js",
+    "build": "",
+    "test": "ts-jest && jest --silent --watchAll=false --ci --maxWorkers=2",
+    "lint": "eslint . --fix",
+    "lint-staged": "lint-staged"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@typescript-eslint/eslint-plugin": "4.28.0",
+    "@typescript-eslint/parser": "4.28.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "4.3.8",
+    "lint-staged": "11.0.0",
+    "node-sass": "6.0.0",
+    "prettier": "^2.2.1",
+    "pretty-quick": "3.0.2",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "typescript": "4.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,css,json,md}": [
+      "pretty-quick --staged"
+    ],
+    "*.{js,ts}": "eslint --fix --max-warnings=0"
+  }
+}
